@@ -221,6 +221,15 @@ dump_boot;
 # init.rc
 insert_file init.rc "run-parts" before "Daemon processes" init.d;
 
+# init.hammerhead.rc
+insert_file init.hammerhead.rc "/sys/devices/system/cpu/cpufreq/interest" after "restorecon_recursive /sys/devices/system/cpu/cpufreq/ondemand" init.hammerhead.cpu;
+replace_string init.hammerhead.rc "/dev/cpuctl/cpu.notify_on_migrate" "/dev/cpuctl/apps/cpu.notify_on_migrate" "/dev/cpuctl/cpu.notify_on_migrate";
+insert_file init.hammerhead.rc "# GPU" after "on property:sys.boot_completed=1" init.hammerhead.gpu;
+replace_string init.hammerhead.rc "write /sys/module/msm_hotplug/enabled 1" "start mpdecision" "write /sys/module/msm_hotplug/enabled 1";
+
+# fstab.hammerhead
+insert_file fstab.hammerhead "f2fs" after "/dev/block/platform/msm_sdcc.1/by-name/userdata" fstab.hammerhead.f2fs;
+
 # end ramdisk changes
 
 write_boot;
