@@ -1,0 +1,14 @@
+# gnu global files
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+*.orig
+*~
+\#*#
+
+# user ignores
+zImage
+*dtb
+*.ko
