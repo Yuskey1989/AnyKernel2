@@ -6,7 +6,7 @@
 kernel.string=Kangall Kernel by Yuskey1989
 do.devicecheck=1
 do.initd=0
-do.modules=0
+do.modules=1
 do.cleanup=1
 device.name1=
 device.name2=
