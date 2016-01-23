@@ -5,7 +5,7 @@
 # EDIFY properties
 kernel.string=Kangall Kernel by Yuskey1989
 do.devicecheck=1
-do.initd=0
+do.initd=1
 do.modules=1
 do.cleanup=1
 device.name1=
@@ -217,6 +217,8 @@ dump_boot;
 
 # begin ramdisk changes
 
+# init.rc
+append_file init.rc "run-parts" init.d;
 
 # end ramdisk changes
 

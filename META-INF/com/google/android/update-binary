@@ -63,6 +63,11 @@ if [ "$(file_getprop /tmp/anykernel/anykernel.sh do.initd)" == 1 ]; then
   ui_print " ";
   mount -o remount,rw /system;
   mkdir /system/etc/init.d;
+  if [ -n "$(ls /tmp/anykernel/init.d)" ]; then
+    ui_print "Pushing init.d scripts...";
+    ui_print " ";
+    cp -rf /tmp/anykernel/init.d/* /system/etc/init.d/;
+  fi
   set_perm_recursive 0 0 0755 0755 /system/etc/init.d;
   mount -o remount,ro /system;
 fi;
