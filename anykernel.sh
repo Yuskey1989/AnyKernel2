@@ -9,14 +9,14 @@ do.initd=1
 do.modules=1
 do.busybox=0
 do.cleanup=1
-device.name1=
+device.name1=hammerhead
 device.name2=
 device.name3=
 device.name4=
 device.name5=
 
 # shell variables
-block=;
+block=/dev/block/platform/msm_sdcc.1/by-name/boot;
 
 ## end setup
 
