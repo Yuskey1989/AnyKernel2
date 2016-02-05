@@ -1,5 +1,2 @@
-service userinit /system/xbin/busybox run-parts /system/etc/init.d
-    class late_start
-    user root
-    group root
-    oneshot
+on property:init.svc.bootanim=stopped
+    exec - root root -- /system/xbin/busybox run-parts /system/etc/init.d

@@ -218,7 +218,7 @@ dump_boot;
 # begin ramdisk changes
 
 # init.rc
-append_file init.rc "run-parts" init.d;
+insert_file init.rc "run-parts" before "Daemon processes" init.d;
 
 # end ramdisk changes
 
