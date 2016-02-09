@@ -1,0 +1,16 @@
+#!/system/bin/sh
+
+echo "westwood" > /proc/sys/net/ipv4/tcp_congestion_control
+
+# suitable configuration to help reduce network latency
+#echo 2 > /proc/sys/net/ipv4/tcp_ecn
+#echo 1 > /proc/sys/net/ipv4/tcp_sack
+#echo 1 > /proc/sys/net/ipv4/tcp_dsack
+#echo 1 > /proc/sys/net/ipv4/tcp_low_latency
+#echo 1 > /proc/sys/net/ipv4/tcp_timestamps
+
+# reduce txqueuelen to 0 to switch from a packet queue to a byte one
+#for i in /sys/class/net/*
+#do
+#    echo 0 > ${i}/tx_queue_len
+#done

@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+[ `ls /system/lib/modules/*.ko | wc -w` != 0 ] || exit 1
+
+for module in /system/lib/modules/*.ko
+do
+    insmod $module
+done

@@ -1,0 +1,7 @@
+#!/system/bin/sh
+
+echo 1 > /proc/sys/vm/laptop_mode
+
+# double the default minfree kb
+#double=`cat /proc/sys/vm/min_free_kbytes | xargs expr 2 \*`
+#echo "$double" > /proc/sys/vm/min_free_kbytes

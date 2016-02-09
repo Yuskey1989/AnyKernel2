@@ -1,0 +1,17 @@
+#!/system/bin/sh
+
+[ -d /sys/block/zram0 ] || exit 1
+
+CORE=`grep -c processor < /proc/cpuinfo`
+i=`echo /sys/block/zram* | wc -w | xargs expr -1 +`
+for id in `seq 0 $i`
+do
+    sync
+    swapoff	/dev/block/zram${id}
+    echo 1       > /sys/block/zram${id}/reset
+    echo "lz4"   > /sys/block/zram${id}/comp_algorithm
+    echo "256M"  > /sys/block/zram${id}/disksize
+    [ -n "$CORE" ] && echo "$CORE" > /sys/block/zram${id}/max_comp_streams
+    mkswap	/dev/block/zram${id}
+    swapon	/dev/block/zram${id}
+done

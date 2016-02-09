@@ -1,0 +1,9 @@
+#!/system/bin/sh
+
+for dev in /sys/block/*/queue
+do
+    echo 0   > ${dev}/add_random
+    echo 256 > ${dev}/nr_requests
+    echo 512 > ${dev}/read_ahead_kb
+    echo "sioplus" > ${dev}/scheduler
+done

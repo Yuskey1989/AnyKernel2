@@ -1,0 +1,13 @@
+#!/system/bin/sh
+
+# disable ASLR
+#echo 0 > /proc/sys/kernel/randomize_va_space
+
+# initialize timer slack
+#echo 100000000 > /dev/cpuctl/apps/bg_non_interactive/timer_slack.min_slack_ns
+
+# decrease fs lease time
+#echo 10 > /proc/sys/fs/lease-break-time
+
+# selinux
+#setenforce 0
