@@ -1,0 +1,17 @@
+#!/system/bin/sh
+
+CORE=`grep -c processor < /proc/cpuinfo`
+lastcore=`expr $CORE - 1`
+
+echo 2572800 > /sys/kernel/msm_cpufreq_limit/cpufreq_limit
+for i in `seq 0 ${lastcore}`
+do
+    echo 1 > /sys/devices/system/cpu/cpu${i}/online
+    chmod 644 /sys/devices/system/cpu/cpu${i}/cpufreq/scaling_max_freq
+    echo 2572800 > /sys/devices/system/cpu/cpu${i}/cpufreq/scaling_max_freq
+    chmod 444 /sys/devices/system/cpu/cpu${i}/cpufreq/scaling_max_freq
+done
+
+echo 2 > /sys/module/msm_turbo/parameters/core_threshold
+echo 2265600 > /sys/module/msm_turbo/parameters/non_turbo_freq
+echo 1 > /sys/module/msm_turbo/parameters/enabled
