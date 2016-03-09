@@ -17,7 +17,7 @@
     write /sys/devices/system/cpu/cpufreq/interest/powersave_bias 0
     write /sys/devices/system/cpu/cpufreq/interest/min_sample_time 60000
     write /sys/devices/system/cpu/cpufreq/interest/max_freq_hysteresis 120000
-    write /sys/devices/system/cpu/cpufreq/interest/target_loads "70 1000000:75 1250000:80 1500000:85 1750000:90 2000000:95"
+    write /sys/devices/system/cpu/cpufreq/interest/target_loads "70 1000000:75 1250000:80 1500000:85 1750000:90 2000000:95 2250000:99"
     write /sys/devices/system/cpu/cpufreq/interest/timer_rate 20000
     write /sys/devices/system/cpu/cpufreq/interest/timer_slack 40000
     write /sys/devices/system/cpu/cpufreq/interest/sync_freq 0
