@@ -1,5 +1,5 @@
 #!/system/bin/sh
 
 sync
-fstrim -v /cache
-fstrim -v /data
+busybox fstrim -v /cache
+busybox fstrim -v /data
