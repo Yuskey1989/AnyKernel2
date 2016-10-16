@@ -4,5 +4,5 @@
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 450000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
     write /sys/module/simple_gpu_algorithm/parameters/simple_gpu_activate 1
-    write /sys/module/simple_gpu_algorithm/parameters/simple_laziness 2
-    write /sys/module/simple_gpu_algorithm/parameters/simple_ramp_threshold 5000
+    write /sys/module/simple_gpu_algorithm/parameters/simple_laziness 4
+    write /sys/module/simple_gpu_algorithm/parameters/simple_ramp_threshold 6000
